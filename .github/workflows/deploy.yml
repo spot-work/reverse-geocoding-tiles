@@ -17,7 +17,10 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
+      - name: Install Node.js dependencies
+        run: npm ci || npm install
+
+      - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y gdal-bin tippecanoe python3-pip
